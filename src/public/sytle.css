@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+body {
+    background-color: #000000;
+    color:red;
+  }
+
+  .alert {
+    height:5%;    
+    width:100%
+ }
