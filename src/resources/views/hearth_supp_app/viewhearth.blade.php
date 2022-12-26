@@ -7,7 +7,7 @@
 </head>
 <body>
         <h2>{{Auth::user()->firstname}}さんの健康状態</h2>
-        <table class="table table-striped table-hover table-bordered" width="50" height="50">
+        <table class="table table-success table-striped" width="50" height="50">
         <thead>
         <tr>
             <th scope="col">ID</th>
