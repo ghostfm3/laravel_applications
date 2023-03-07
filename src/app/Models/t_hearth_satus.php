@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class t_hearth_satus extends Model
 {
     use HasFactory;
+    protected $fillable = ['user_id'];
 }

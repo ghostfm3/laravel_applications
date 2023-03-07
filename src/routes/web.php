@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InputHearthController;
+use App\Http\Controllers\HearthRegisterController;
 // use App\Http\Controllers\HomeController;
 
 /*
@@ -48,13 +49,14 @@ Route::resource('/add',PostController::class);
 // todoアプリ
 Route::resource('todos',TodoController::class);
 
+
+
 // 健康状態管理アプリ
 Route::get('hlogin',[LoginController::class, 'index'])->name('hlogin'); 
 Route::post('main',[LoginController::class, 'logincheck']);
 Route::group(['middleware' => 'auth:web'], function () { 
     Route::get('mainindex',[LoginController::class, 'after_index']);
-
-    Route::get('hearth',[InputHearthController::class, 'index']);
+    Route::resource('hearth',HearthRegisterController::class);
     Route::get('viewhearth',[InputHearthController::class, 'viewindex']);
     Route::get('logout',[LoginController::class, 'logout']);
 });

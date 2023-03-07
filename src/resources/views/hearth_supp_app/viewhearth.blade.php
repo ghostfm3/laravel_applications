@@ -10,23 +10,24 @@
         <table class="table table-success table-striped" width="50" height="50">
         <thead>
         <tr>
-            <th scope="col">ID</th>
+            <!-- <th scope="col">ID</th> -->
+            <th scope="col">日付</th>
             <th scope="col">体温</th>
-            <th scope="col">計測時刻</th>
+            <th scope="col">計測時刻</th>        
             <th scope="col">咳</th>
             <th scope="col">頭痛</th>
             <th scope="col">だるさ</th>
             <th scope="col">息苦しさ</th>
             <th scope="col">味覚異常</th>
             <th scope="col">風症状</th>
-            <th scope="col">その他自覚</th>
-            <th scope="col">日付</th>
+            <th scope="col">その他自覚</th>           
         </tr>
         </thead>
         <tbody>
         @foreach ($hearthstate as $state)
             <tr>
-                <td>{{ $state->id }}</td>
+                <!-- <td>{{ $state->id }}</td> -->
+                <td>{{ $state->date }}</td>
                 <td>{{ $state->bodytemp }}</td>
                 <td>{{ $state->bodytemptime }}</td>
                 <td>{{ $state->cough }}</td>
@@ -36,7 +37,7 @@
                 <td>{{ $state->abnormal_taste }}</td>
                 <td>{{ $state->cold_sympotoms }}</td>
                 <td>{{ $state->subjective_symptoms }}</td>
-                <td>{{ $state->date }}</td>
+                
             </tr>
         @endforeach
         </tbody>

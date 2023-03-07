@@ -9,7 +9,7 @@
     <link href="/css/star/index.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('aaaa.css') }}">
 </head>
-    @yield('header')
+<!-- @yield('header')  -->
  <header>
     <h5 class="title">健康管理管理アプリ</h5>
     <nav class="nav">
@@ -37,17 +37,6 @@
         <a href="http://localhost:8080/viewhearth" class="btn btn-link"><h3>2. 健康状態参照</h3></a>
         </td>
         </tr>
-        <tr>
-        <td>
-        <a href="http://localhost:8080/todos" class="btn btn-link"><h3>3. todoリスト</h3></a>
-        </td>
-        </tr>
-        <tr>
-        <td>
-        <a href="http://localhost:8080/signup" class="btn btn-link"><h3>4. アカウント管理</h3></a>
-        <td>
-        </tr>
         </table>    
     </body>
-
 </html>
