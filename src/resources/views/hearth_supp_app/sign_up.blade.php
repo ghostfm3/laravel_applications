@@ -14,41 +14,49 @@
         </td></tr></table>
         <br />
     <body>
-        <form action="http://localhost:8080/main" method="POST">
+        <form action="http://localhost:8080/signup" method="POST">
             <!-- CSRF対策を行う -->
             @csrf
-            <table><tr>
-            <td><span class="badge badge-danger ml-2">{{ __('必須') }}</span> ID：</td>
-            <td>
-            <input type="text" name="char" value="" />
-            </td>
-            </tr>
-            <tr>
-            <td><span class="badge badge-danger ml-2">{{ __('必須') }}</span> パスワード：</td>
-            <td>
-            <input type="password" name="char" value="" />
-            </td>
-            </tr>
-            <tr>
-            <td><span class="badge badge-danger ml-2">{{ __('必須') }}</span> パスワード再入力：</td>
-            <td>
-            <input type="password" name="char" value="" />
-            </td>
-            </tr>
-            <tr>
-            <td><span class="badge badge-danger ml-2">{{ __('必須') }}</span> 性：</td>
-            <td>
-            <input type="text" name="char" value="" />
-            </td>
-            </tr>
-            <tr>
-            <td><span class="badge badge-danger ml-2">{{ __('必須') }}</span> 名：</td>
-            <td>
-            <input type="text" name="char" value="" />
-            </td>
-            </tr>
-            </table>
-            <br />
+            <p>
+            <dd>
+            <label for="uid"><span class="badge badge-danger ml-2">{{ __('必須') }}</span> ID:</label>  
+            <input type="text" name="id" id="uid" />
+            @if ($errors->has('id'))
+            <div class="p-contact__error" style="font-size:xx-small;"><font color="#FF0000">{{ $errors->first('id') }}</font></div>
+            @endif
+            </dd>
+            </p>
+
+            <p>
+            <dd>
+            <label for="pwd"><span class="badge badge-danger ml-2">{{ __('必須') }}</span>パスワード:</label>
+            <input type="password" name="password" id="pwd" />
+            @if ($errors->get('password')) 
+            <div class="p-contact__error" style="font-size:xx-small;"><font color="#FF0000">{{ $errors->first('password') }}</font></div>
+            @endif 
+            </dd>
+            </p>
+
+            <p>
+            <dd>
+            <label for="pwd"><span class="badge badge-danger ml-2">{{ __('必須') }}</span>性：</label>
+            <input type="firstname" name="firstname" id="fname" />
+            @if ($errors->get('firstname')) 
+            <div class="p-contact__error" style="font-size:xx-small;"><font color="#FF0000">{{ $errors->first('firstname') }}</font></div>
+            @endif 
+            </dd>
+            </p>
+
+            <p>
+            <dd>
+            <label for="pwd"><span class="badge badge-danger ml-2">{{ __('必須') }}</span>名：</label>
+            <input type="lastname" name="lastname" id="lname" />
+            @if ($errors->get('lastname')) 
+            <div class="p-contact__error" style="font-size:xx-small;"><font color="#FF0000">{{ $errors->first('lastname') }}</font></div>
+            @endif 
+            </dd>
+            </p>
+
             <button type="submit" id="submit_button" class="btn btn-warning btn-sm">登録</button> 
             <br />
             <br />
