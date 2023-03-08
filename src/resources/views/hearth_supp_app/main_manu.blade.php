@@ -22,24 +22,23 @@
       </ul>
     </nav>
   </header>
-  
     <body>
-        <h2>メインメニュー</h2>
+        <h1>メインメニュー</h1>
         @csrf
         <table>
         <tr>
         <td>
-        <a href="http://localhost:8080/hearth" class="btn btn-link"><h3>1. 健康状態登録</h3></a>
+        <a href="http://localhost:8080/hearth" class="btn btn-link"><font size=6>1. 健康状態登録</font></a>
         </td>
         </tr>
         <tr>
         <td>
-        <a href="http://localhost:8080/viewhearth" class="btn btn-link"><h3>2. 健康状態参照</h3></a>
+        <a href="http://localhost:8080/viewhearth" class="btn btn-link"><font size=6>2. 健康状態参照</font></a>
         </td>
         </tr>
         <tr>
         <td>
-        <a href="http://localhost:8080/add" class="btn btn-link"><h3>3. 掲示板</h3></a>
+        <a href="http://localhost:8080/add" class="btn btn-link"><font size=6>3. 掲示板</font></a>
         </td>
         </tr>
         </table>    
