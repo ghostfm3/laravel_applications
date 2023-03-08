@@ -6,7 +6,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
+
+        @if(Auth::user()->admin == "True")
+        <h2>全てのユーザーの健康状態</h2>
+        @else
         <h2>{{Auth::user()->firstname}}さんの健康状態</h2>
+        @endif
         <table class="table table-success table-striped" width="50" height="50">
         <thead>
         <tr>
@@ -20,7 +25,10 @@
             <th scope="col">息苦しさ</th>
             <th scope="col">味覚異常</th>
             <th scope="col">風症状</th>
-            <th scope="col">その他自覚</th>           
+            <th scope="col">その他自覚</th> 
+            @if(Auth::user()->admin == "True")
+            <th scope="col">ユーザーID</th>
+            @endif          
         </tr>
         </thead>
         <tbody>
@@ -37,12 +45,20 @@
                 <td>{{ $state->abnormal_taste }}</td>
                 <td>{{ $state->cold_sympotoms }}</td>
                 <td>{{ $state->subjective_symptoms }}</td>
-                
+                @if(Auth::user()->admin == "True")
+                <td>{{ $state->userid }}</td>
+                @endif   
             </tr>
         @endforeach
         </tbody>
     </table>
     <center>
     <a href="http://localhost:8080/mainindex" class="btn btn-link">戻る</a>
+    </center>
+
+    <center>
+        <footer>
+        <small>copyrights &copy; 2022 PHP, Laravel Studing Group All rights Reserved.</small>
+        </footer>
     </center>
 </body>

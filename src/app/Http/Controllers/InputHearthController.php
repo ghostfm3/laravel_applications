@@ -21,7 +21,11 @@ class InputHearthController extends Controller
     }
 
     public function viewindex() {
-        $HearthState = t_hearth_satus::where('userid',Auth::user()->userid)->orderByRaw('date ASC')->get();
+        if(Auth::user()->admin == "True" ){
+            $HearthState = t_hearth_satus::orderByRaw('date ASC')->get();
+        }else{
+            $HearthState = t_hearth_satus::where('userid',Auth::user()->userid)->orderByRaw('date ASC')->get();
+        };
         return view('hearth_supp_app.viewhearth', ['hearthstate' => $HearthState]);
     }
 }

@@ -59,6 +59,7 @@ Route::post('main',[LoginController::class, 'logincheck']);
 Route::group(['middleware' => 'auth:web'], function () { 
     Route::get('mainindex',[LoginController::class, 'after_index']);
     Route::resource('hearth',HearthRegisterController::class);
+    Route::resource('/add',PostController::class);
     Route::get('viewhearth',[InputHearthController::class, 'viewindex']);
     Route::get('logout',[LoginController::class, 'logout']);
 });

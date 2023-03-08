@@ -169,7 +169,7 @@ return [
     */
 
     'attributes' => [],
-    'spam' => 'The message you entered has been deleted as it may be spam.',
+    // 'spam' => 'The message you entered has been deleted as it may be spam.',
     'not_exist_id' => 'not exsist id',
     'not_exist_pass' => 'not exist password',
 

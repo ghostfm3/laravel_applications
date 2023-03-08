@@ -131,5 +131,9 @@
     <br />
     <a href="http://localhost:8080/mainindex" class="btn btn-link">戻る</a>
     </center>
- 
+    <center>
+        <footer>
+        <small>copyrights &copy; 2022 PHP, Laravel Studing Group All rights Reserved.</small>
+        </footer>
+        </center>
 </form>

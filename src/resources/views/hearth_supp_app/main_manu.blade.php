@@ -37,6 +37,16 @@
         <a href="http://localhost:8080/viewhearth" class="btn btn-link"><h3>2. 健康状態参照</h3></a>
         </td>
         </tr>
+        <tr>
+        <td>
+        <a href="http://localhost:8080/add" class="btn btn-link"><h3>3. 掲示板</h3></a>
+        </td>
+        </tr>
         </table>    
     </body>
+    <center>
+        <footer>
+        <small>copyrights &copy; 2022 PHP, Laravel Studing Group All rights Reserved.</small>
+        </footer>
+    </center>
 </html>
