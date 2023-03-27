@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Todo;
+use App\Models\n_post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class TodoController extends Controller
@@ -15,7 +16,7 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::orderByRaw('deadline IS NULL ASC')->orderBy('deadline')->get();
+        $todos = n_post::where('userid',Auth::user()->userid)->orderByRaw('deadline IS NULL ASC')->orderBy('deadline')->get();
         return view('todos.index', [
             'todos' => $todos,
         ]);
@@ -35,15 +36,21 @@ class TodoController extends Controller
             'newTodo' => 'required|max:100',
             'newDeadline' => 'nullable|after:now',
         ]);
-
-        $data = Todo::create([
+        Log::info(Auth::user()->userid);
+        $data = n_post::create([
             'todo' => $request->newTodo,
-            'deadline' => $request->newDeadline,
+            'userid' => Auth::user()->userid,
+            'deadline' => $request->newDeadline,          
         ]);
+        // $t = new Todo();
+        // $t -> userid = Auth::user()->userid;
+        // $p -> save();
+
         session()->flash('message', '新しいタスクが追加されました');
 
         $storeSuccess = array('status' => 'success', 'id' => $data->id);
         return json_encode($storeSuccess);
+        // return redirect("/todos");
     }
 
     /**
@@ -55,7 +62,7 @@ class TodoController extends Controller
     public function edit($id)
     {
         //
-        $todo = Todo::find($id);
+        $todo = n_post::find($id);
         return view('todos.edit', [
             'todo' => $todo,
         ]);
@@ -75,7 +82,7 @@ class TodoController extends Controller
             'updateTodo' => 'required|max:100',
             'updateDeadline' => 'nullable|after:row',
         ]);
-        $todo = Todo::find($id);
+        $todo = n_post::find($id);
         $todo->todo = $request->updateTodo;
         $todo->deadline = $request->updateDeadline;
 
@@ -94,10 +101,11 @@ class TodoController extends Controller
     public function destroy($id)
     {
         //
-        $todo = Todo::find($id);
+        $todo = n_post::find($id);
         $todo->delete();
         $arr = array('status' => 'success', 'message' => '削除が完了しました');
         return json_encode($arr);
+        // return redirect("/todos");
     }
 
     public function loginfo($str)

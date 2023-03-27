@@ -16,7 +16,7 @@ $(function () {
         console.log(newDeadline)
         var senddata = {
             "newTodo":newTodo,
-            "newDeadline":newDeadline
+            "newDeadline":newDeadline,
         }
         $.ajax({
             type: "post",

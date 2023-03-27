@@ -38,7 +38,12 @@
         </tr>
         <tr>
         <td>
-        <a href="http://localhost:8080/add" class="btn btn-link"><font size=6>3. 掲示板</font></a>
+        <a href="http://localhost:8080/todos" class="btn btn-link"><font size=6>3. Todoリスト</font></a>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <a href="http://localhost:8080/add" class="btn btn-link"><font size=6>4. 掲示板</font></a>
         </td>
         </tr>
         </table>    
