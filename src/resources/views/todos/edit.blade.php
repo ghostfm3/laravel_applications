@@ -33,7 +33,9 @@
         @endif
     </div>
 </body>
+<center>
 <footer>
         <small>copyrights &copy; 2022 PHP, Laravel Studing Group All rights Reserved.</small>
         </footer>
+</center>
 </html>
