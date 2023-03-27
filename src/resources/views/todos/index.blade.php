@@ -70,5 +70,3 @@
     </center>
 </body>
 </html>
-
-<!-- http://localhost:8080/todos/{{ $todo->id }}/edit" -->

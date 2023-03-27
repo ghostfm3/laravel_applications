@@ -19,7 +19,7 @@ class PostController extends Controller
         $request->validate([
             'messages' => 'required|spam'
         ]);
-        $validator->errors()->add('message', 'スパムメッセージの疑いがあるため投稿を削除しました。');
+        // $validator->errors()->add('message', 'スパムメッセージの疑いがあるため投稿を削除しました。');
         // array_search('spam', $outputs)
         $username = isset($_POST["username"]) ? $_POST["username"] : "";
         $messages = isset($_POST["messages"]) ? $_POST["messages"] : "";
@@ -33,7 +33,7 @@ class PostController extends Controller
         $p -> save();
 
         $storeSuccess = array('status' => 'success', 'created_at' => $nowTime );
-        return redirect("/add")->withInput()->withErrors($validator);
+        return redirect("/add");
         // return json_encode($storeSuccess);
     }
 }
